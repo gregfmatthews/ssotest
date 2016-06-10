@@ -11,7 +11,7 @@ class Saml2LoginEventListener
 
     public function handle(Saml2LoginEvent $event){
         $user = $event->getSaml2User();
-        dd($user);
+        dd($user->getAttributes());
         die();
     }
 
