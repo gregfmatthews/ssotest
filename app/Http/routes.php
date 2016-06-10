@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/',
+['middleware' => 'saml', function () {
     return view('welcome');
-});
+}]);
