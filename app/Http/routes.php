@@ -13,5 +13,7 @@
 
 Route::get('/',
 ['middleware' => 'saml', function () {
-    return view('welcome');
+
 }]);
+
+Route::get('/landing',function(){return view('welcome');});
