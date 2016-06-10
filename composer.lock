@@ -4,26 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "457f08c20b03d534cf14a2ce7c7dff88",
-    "content-hash": "bc776b28a46cce8274b064c9b75732d1",
+    "hash": "6961e404587aeaa552a513fc4adfd4db",
+    "content-hash": "25c763e7c9062890477d6e9a43396206",
     "packages": [
         {
             "name": "aacotroneo/laravel-saml2",
-            "version": "0.7.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aacotroneo/laravel-saml2.git",
-                "reference": "b1d0a4899631895464c77a89bb043257714d23ba"
+                "reference": "75780d4ed9b95f950aa8f50e17f995a5d4efe8fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aacotroneo/laravel-saml2/zipball/b1d0a4899631895464c77a89bb043257714d23ba",
-                "reference": "b1d0a4899631895464c77a89bb043257714d23ba",
+                "url": "https://api.github.com/repos/aacotroneo/laravel-saml2/zipball/75780d4ed9b95f950aa8f50e17f995a5d4efe8fd",
+                "reference": "75780d4ed9b95f950aa8f50e17f995a5d4efe8fd",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": ">=5.0.0",
-                "onelogin/php-saml": "2.6.1",
+                "onelogin/php-saml": "2.7.0",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -53,7 +53,7 @@
                 "onelogin",
                 "saml"
             ],
-            "time": "2016-02-11 14:42:36"
+            "time": "2016-04-01 14:49:15"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -788,16 +788,16 @@
         },
         {
             "name": "onelogin/php-saml",
-            "version": "2.6.1",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/onelogin/php-saml.git",
-                "reference": "9f3583c35339f185e114d148eac08d600a9360ef"
+                "reference": "a869401365f0c330a87db2666870856781e4dc5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/onelogin/php-saml/zipball/9f3583c35339f185e114d148eac08d600a9360ef",
-                "reference": "9f3583c35339f185e114d148eac08d600a9360ef",
+                "url": "https://api.github.com/repos/onelogin/php-saml/zipball/a869401365f0c330a87db2666870856781e4dc5d",
+                "reference": "a869401365f0c330a87db2666870856781e4dc5d",
                 "shasum": ""
             },
             "require": {
@@ -810,7 +810,7 @@
                 "pdepend/pdepend": "1.1.0",
                 "phploc/phploc": "*",
                 "phpunit/phpunit": "3.7.31",
-                "satooshi/php-coveralls": "dev-master",
+                "satooshi/php-coveralls": "1.0.1",
                 "sebastian/phpcpd": "*",
                 "squizlabs/php_codesniffer": "*"
             },
@@ -838,7 +838,7 @@
                 "onelogin",
                 "saml"
             ],
-            "time": "2015-09-09 14:18:12"
+            "time": "2016-02-15 19:57:54"
         },
         {
             "name": "paragonie/random_compat",
@@ -3254,7 +3254,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "aacotroneo/laravel-saml2": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

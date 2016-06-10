@@ -27,7 +27,7 @@ class SamlAuthenticate
             else
             {
                 //return Saml2::login(URL::full());
-                return redirect()->route('saml2_login');
+                return redirect()->route('saml_login');
             }
         }
 
