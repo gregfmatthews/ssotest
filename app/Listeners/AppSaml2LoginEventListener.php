@@ -1,7 +1,7 @@
 <?php
 
 use Aacotroneo\Saml2\Events\Saml2LoginEvent;
-class Saml2LoginEventListener
+class AppSaml2LoginEventListener
 {
     public function __construct()
     {
