@@ -155,7 +155,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Aacotroneo\Saml2\Saml2ServiceProvider::class
+        Aacotroneo\Saml2\Saml2ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class
 
     ],
 
@@ -202,7 +203,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Saml2'     => Aacotroneo\Saml2\Facades\Saml2Auth::class
+        'Saml2'     => Aacotroneo\Saml2\Facades\Saml2Auth::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
