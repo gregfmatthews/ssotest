@@ -15,7 +15,7 @@ class SamlAuthenticate
      * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard)
+    public function handle($request, Closure $next, $guard=null)
     {
         if ($this->auth->guest())
         {
