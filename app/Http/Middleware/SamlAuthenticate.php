@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use Aacotroneo\Saml2;
+
 
 class SamlAuthenticate
 {
@@ -26,8 +26,8 @@ class SamlAuthenticate
             }
             else
             {
-                return Saml2::login(URL::full());
-                //return redirect()->guest('auth/login');
+                //return Saml2::login(URL::full());
+                return redirect()->route('saml2_login');
             }
         }
 
