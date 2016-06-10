@@ -1,7 +1,9 @@
 <?php
 
+namespace App\Listeners;
+
 use Aacotroneo\Saml2\Events\Saml2LoginEvent;
-class AppSaml2LoginEventListener
+class Saml2LoginEventListener
 {
     public function __construct()
     {
