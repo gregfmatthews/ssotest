@@ -17,7 +17,7 @@ class SamlAuthenticate
      */
     public function handle($request, Closure $next, $guard=null)
     {
-        if ($this->auth->guest())
+        if (Auth::guard($guard)->guest())
         {
             if ($request->ajax())
             {
