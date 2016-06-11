@@ -9,16 +9,20 @@
 namespace App\Extensions;
 
 
-use Illuminate\Contracts\Auth\UserProvider;
+
 use Illuminate\Contracts\Auth\Authenticatable;
 use GuzzleHttp\Client;
+use Illuminate\Contracts\Auth\UserProvider;
+use Illuminate\Foundation\Auth\User;
 
 class KwuUserProvider implements UserProvider
 {
     private $settings;
-    public function __construct($settings)
+    private $user;
+    public function __construct($settings, User $user)
     {
         $this->settings = $settings;
+        $this->user = $user;
     }
 
     public function retrieveByCredentials(array $credentials)
@@ -48,7 +52,4 @@ class KwuUserProvider implements UserProvider
         // TODO: Implement validateCredentials() method.
     }
 
-    public function isDeferred(){
-        return false;
-    }
 }
