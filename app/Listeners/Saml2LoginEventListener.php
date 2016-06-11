@@ -18,7 +18,7 @@ class Saml2LoginEventListener
             session()->flash('kwuid not found', json_encode($attributes));
             return redirect()->route('error');
         }
-        Auth::loginUsingId($attributes['PersonImmutableID'][0]);
+        Auth::loginUsingId($attributes['PersonImmutableID'][0],true);
         $user = Auth::user();
     }
 
