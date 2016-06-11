@@ -19,10 +19,11 @@ class KwuUserProvider implements UserProvider
 {
     private $settings;
     private $user;
-    public function __construct($settings, User $user)
+    public function __construct($settings)
     {
         $this->settings = $settings;
-        $this->user = $user;
+        print_r($settings);
+        die();
     }
 
     public function retrieveByCredentials(array $credentials)
