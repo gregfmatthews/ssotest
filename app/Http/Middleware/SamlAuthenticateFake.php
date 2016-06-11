@@ -2,7 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use App\Listeners\Saml2LoginEventListenerFake;
+
+use App\Events\FakeSamlEvent;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,7 +22,7 @@ class SamlAuthenticateFake
     {   logger()->info($guard);
         if (Auth::guard($guard)->guest())
         {
-            event(new Saml2LoginEventListenerFake());
+            event(new FakeSamlEvent());
         }
 
         return $next($request);

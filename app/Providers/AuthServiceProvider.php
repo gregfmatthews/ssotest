@@ -26,13 +26,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(GateContract $gate)
     {
-        //$this->registerPolicies($gate);
-
-     
-        $gate->define('view-admin', function($user=null){
-            return true;
-        });
-
-        //
+        
     }
 }

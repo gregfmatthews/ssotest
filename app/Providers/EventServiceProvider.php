@@ -17,7 +17,7 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\EventListener',
         ],
         //'Aacotroneo\Saml2\Events\Saml2LoginEvent'=>['App\Listeners\Saml2LoginEventListener']
-        'Aacotroneo\Saml2\Events\Saml2LoginEvent'=>['App\Listeners\Saml2LoginEventListenerFake']
+        'App\Events\FakeSamlEvent'=>['App\Listeners\Saml2LoginEventListenerFake']
     ];
 
     /**
