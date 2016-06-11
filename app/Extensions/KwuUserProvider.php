@@ -30,6 +30,7 @@ class KwuUserProvider implements UserProvider
         $guzzle = new Client();
         $response = $guzzle->post($this->settings['getMarketCenters'],['x-api-key'=>$this->settings['key']],json_encode(['kwuid'=>$identifier]));
         $marketcenters = json_decode($response->getBody(1));
+        print_r($response);
         print_r($marketcenters);
         die();
 
