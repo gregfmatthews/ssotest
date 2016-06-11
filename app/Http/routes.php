@@ -17,6 +17,6 @@ Route::get('/',
     }]);
 
 Route::get('/error',function(){return view('errors.general');});
-Route::get('/landing',['middleware'=>['web,saml'],'uses'=>'DashboardController@index']);
+Route::get('/landing',['middleware'=>['web','saml'],'uses'=>'DashboardController@index']);
 Route::get('/admin',['AdminController@index']);
 Route::get('/admin/goal',['AdminController@setGoal']);
