@@ -17,7 +17,7 @@ Route::get('/error',function(){return view('errors.general');});
 Route::get('/landing',['middleware'=>['web'],'uses'=>'DashboardController@index']);
 Route::get('/admin',['middleware'=>['web'],'uses'=>'AdminController@index']);
 Route::get('/admin/goal',['middleware'=>['web'],'uses'=>'AdminController@setGoal']);
-Route::get('/test',['middleware'=>['web'],'uses'=>'Dashboard@test']);
+Route::get('/test',['middleware'=>['web'],'uses'=>'DashboardController@test']);
 Route::get('/',
     ['middleware' => ['saml:web'], function () {
 
