@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use Aacotroneo\Saml2\Events\Saml2LoginEvent;
+use App\Events\FakeSamlEvent;
 use Auth;
 use Config;
 class Saml2LoginEventListenerFake
@@ -11,7 +11,7 @@ class Saml2LoginEventListenerFake
     {
     }
 
-    public function handle(Saml2LoginEvent $event){
+    public function handle(FakeSamlEvent $event){
 
 
             Auth::loginUsingId(Config('kwuapi.testid'));

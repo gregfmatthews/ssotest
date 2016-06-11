@@ -7,9 +7,8 @@
  */
 
 namespace App\Events;
-use Aacotroneo\Saml2\Events\Saml2LoginEvent;
 
-class FakeSamlEvent extends Saml2LoginEvent
+class FakeSamlEvent extends Event
 {
 
 }
