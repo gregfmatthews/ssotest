@@ -4,6 +4,7 @@
 namespace App\Authentication;
 use Illuminate\Contracts\Auth\UserProvider as IlluminateUserProvider;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Guzzle;
 use Config;
 
 class UserProvider implements IlluminateUserProvider
@@ -14,8 +15,8 @@ class UserProvider implements IlluminateUserProvider
     }
     public function retrieveById($identifier)
     {
-        $guzzle = new Client();
-        $response = $guzzle->post(Config('kwuapi.getmarketcenterurl'),['x-api-key'=>Config('kwuapi.key')],json_encode(['kwuid'=>$identifier]));
+
+        $response = Guzzle::post(Config('kwuapi.getmarketcenterurl'),['x-api-key'=>Config('kwuapi.key')],json_encode(['kwuid'=>$identifier]));
         $marketcenters = json_decode($response->getBody(1));
         print_r($response);
         print_r($marketcenters);
