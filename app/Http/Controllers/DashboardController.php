@@ -11,7 +11,11 @@ class DashboardController extends Controller
 {
     public function index(Request $request){
         $user = Auth::guard('web')->user();
-        dd($user);
+        if(!empty($user->marketcenters)){
+            dd($user->marketcenters);
+        } else {
+            dd('agent');
+        }
     }
 
     public function test(){
