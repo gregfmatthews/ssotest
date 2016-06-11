@@ -19,7 +19,6 @@ class Saml2LoginEventListener
             return redirect()->route('error');
         }
         Auth::loginUsingId($attributes['PersonImmutableID'][0],true);
-        $user = Auth::user();
     }
 
 }

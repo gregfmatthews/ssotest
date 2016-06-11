@@ -17,7 +17,7 @@ class SamlAuthenticate
      * @return mixed
      */
     public function handle($request, Closure $next, $guard=null)
-    {
+    {   dd($guard);
         if (Auth::guard($guard)->guest())
         {
             if ($request->ajax())
