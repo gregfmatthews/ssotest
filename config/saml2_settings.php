@@ -16,7 +16,7 @@ return $settings = array(
      * which middleware group to use for the saml routes
      * Laravel 5.2 will need a group which includes StartSession
      */
-    'routesMiddleware' => ['saml'],
+    'routesMiddleware' => ['web'],
 
     /**
      * Where to redirect after logout
