@@ -66,8 +66,7 @@ return [
 
     'providers' => [
         'users' => [
-            'driver' => 'kwuuser',
-            'model' => App\User::class,
+            'driver' => 'kwuuser'
         ],
 
         // 'users' => [

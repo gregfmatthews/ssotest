@@ -1,25 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gregmatthews
- * Date: 6/10/16
- * Time: 4:59 PM
- */
 
-namespace App\Extensions;
-
-
+namespace App\Authentication;
 use Illuminate\Contracts\Auth\Authenticatable;
 
-class KwuUserAutenticatable implements Authenticatable
+class User implements Authenticatable
 {
     public function getAuthIdentifier()
     {
-        // TODO: Implement getAuthIdentifier() method.
+        return $this->kwuid;
     }
-    public function getAuthIdentifierName()
+    public function getRememberTokenName()
     {
-        return 'kwu_id';
+        // TODO: Implement getRememberTokenName() method.
     }
     public function getAuthPassword()
     {
@@ -29,9 +21,9 @@ class KwuUserAutenticatable implements Authenticatable
     {
         // TODO: Implement getRememberToken() method.
     }
-    public function getRememberTokenName()
+    public function getAuthIdentifierName()
     {
-        // TODO: Implement getRememberTokenName() method.
+        return 'kwuid';
     }
     public function setRememberToken($value)
     {
