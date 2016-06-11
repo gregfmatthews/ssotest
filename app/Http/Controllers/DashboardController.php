@@ -10,7 +10,7 @@ use Auth;
 class DashboardController extends Controller
 {
     public function index(Request $request){
-        $user = Auth::user();
+        $user = Auth::guard('web')->user();
         dd($user);
     }
 
