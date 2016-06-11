@@ -20,7 +20,7 @@ class Saml2LoginEventListener
         }
         Auth::loginUsingId($attributes['PersonImmutableID'][0]);
         $user = Auth::user();
-        dd($user);
+        //dd($user);
     }
 
 }
