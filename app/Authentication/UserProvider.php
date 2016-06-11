@@ -21,12 +21,9 @@ class UserProvider implements IlluminateUserProvider
             'json'=>['kwuid'=>$identifier]
         ]);
         $marketcenters = json_decode($response->getBody(1));
-        echo "id:",$identifier;
-        print_r($response);
-        print_r($marketcenters);
-        die();
         $user = new User();
-        $user->kwuid = 42968;
+        $user->kwuid = $identifier;
+        $user->markercenters = $marketcenters;
 
         return $user;
     }
