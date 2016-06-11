@@ -1,32 +1,28 @@
 <?php
 
 namespace App\Authentication;
-use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User implements Authenticatable
+class User extends Authenticatable
 {
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'kwuid',
+    ];
+
     public function getAuthIdentifier()
     {
         return $this->kwuid;
     }
-    public function getRememberTokenName()
-    {
-        // TODO: Implement getRememberTokenName() method.
-    }
-    public function getAuthPassword()
-    {
-        // TODO: Implement getAuthPassword() method.
-    }
-    public function getRememberToken()
-    {
-        // TODO: Implement getRememberToken() method.
-    }
+
     public function getAuthIdentifierName()
     {
         return 'kwuid';
     }
-    public function setRememberToken($value)
-    {
-        // TODO: Implement setRememberToken() method.
-    }
+
 }
