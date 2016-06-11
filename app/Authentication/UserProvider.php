@@ -21,8 +21,7 @@ class UserProvider implements IlluminateUserProvider
         die();*/
         $user = new User();
         $user->kwuid = 42968;
-        var_dump($user);
-        die();
+       
         return $user;
     }
     public function updateRememberToken(Authenticatable $user, $token)
