@@ -16,18 +16,23 @@ class UserProvider implements IlluminateUserProvider
     public function retrieveById($identifier)
     {
 
-        $id = $identifier==334116?42968:$identifier;
-        logger()->info('fetching');
-        $response = Guzzle::post(Config('kwuapi.getmarketcenterurl'),[
-            'headers'=>['x-api-key'=>Config('kwuapi.key')],
-            'json'=>['kwuid'=>$id]
-        ]);
-        $marketcenters = json_decode($response->getBody(1));
-        $user = new User();
-        $user->kwuid = $identifier;
-        $user->markercenters = $marketcenters;
+        if(!Auth::check()) {
 
-        return $user;
+            $id = $identifier == 334116 ? 42968 : $identifier;
+            logger()->info('fetching');
+            $response = Guzzle::post(Config('kwuapi.getmarketcenterurl'), [
+                'headers' => ['x-api-key' => Config('kwuapi.key')],
+                'json' => ['kwuid' => $id]
+            ]);
+            $marketcenters = json_decode($response->getBody(1));
+            $user = new User();
+            $user->kwuid = $identifier;
+            $user->markercenters = $marketcenters;
+
+            return $user;
+        } else {
+            return Auth::user();
+        }
     }
     public function updateRememberToken(Authenticatable $user, $token)
     {
