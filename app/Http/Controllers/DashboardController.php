@@ -11,6 +11,7 @@ class DashboardController extends Controller
 {
     public function index(Request $request){
         $user = Auth::guard('web')->user();
+        dd($user->marketcenters);
         if(!empty($user->marketcenters)){
             dd($user->marketcenters);
         } else {
