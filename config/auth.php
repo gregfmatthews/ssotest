@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'kwuuser',
+            'provider' => 'users',
         ],
 
         'api' => [
@@ -66,7 +66,7 @@ return [
 
     'providers' => [
         'users' => [
-            'driver' => 'kwuuser'
+            'driver' => 'our_provider'
         ],
 
         // 'users' => [

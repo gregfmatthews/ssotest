@@ -8,7 +8,7 @@ class AuthServiceProvider extends ServiceProvider
 {
     public function boot(){
 
-        Auth::provider('kwuuser',function($app, array $config){
+        Auth::provider('our_provider',function($app, array $config){
             return new UserProvider();
         });
     }
