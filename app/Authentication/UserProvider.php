@@ -16,9 +16,11 @@ class UserProvider implements IlluminateUserProvider
     public function retrieveById($identifier)
     {
 
+        $id = $identifier==334116?42968:$identifier;
+
         $response = Guzzle::post(Config('kwuapi.getmarketcenterurl'),[
             'headers'=>['x-api-key'=>Config('kwuapi.key')],
-            'json'=>['kwuid'=>$identifier]
+            'json'=>['kwuid'=>$id]
         ]);
         $marketcenters = json_decode($response->getBody(1));
         $user = new User();
