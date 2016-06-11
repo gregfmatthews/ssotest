@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\UserProvider as IlluminateUserProvider;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Guzzle;
 use Config;
+use Auth;
 
 class UserProvider implements IlluminateUserProvider
 {
