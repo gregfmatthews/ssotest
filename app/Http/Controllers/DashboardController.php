@@ -13,4 +13,8 @@ class DashboardController extends Controller
         $user = Auth::user();
         dd($user);
     }
+
+    public function test(){
+        die('test');
+    }
 }
