@@ -13,9 +13,9 @@ class Saml2LoginEventListenerFake
 
     public function handle(FakeSamlEvent $event){
 
-
-            Auth::loginUsingId(Config('kwuapi.testid'));
             logger()->info('here');
+            Auth::loginUsingId(Config('kwuapi.testid'));
+
             return redirect(config('saml2_settings.loginRoute'));
         
     }

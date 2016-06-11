@@ -25,6 +25,6 @@ class SamlAuthenticateFake
             event(new FakeSamlEvent());
         }
 
-        return $next($request);
+        return redirect('/landing');
     }
 }
