@@ -47,4 +47,8 @@ class KwuUserProvider implements UserProvider
     {
         // TODO: Implement validateCredentials() method.
     }
+
+    public function isDeferred(){
+        return false;
+    }
 }
