@@ -14,10 +14,10 @@
 
 
 Route::get('/error',function(){return view('errors.general');});
-Route::get('/landing',['middleware'=>['web:web'],'uses'=>'DashboardController@index']);
-Route::get('/admin',['middleware'=>['web:web'],'uses'=>'AdminController@index']);
-Route::get('/admin/goal',['middleware'=>['web:web'],'uses'=>'AdminController@setGoal']);
-Route::get('/test',['middleware'=>['web:web'],'uses'=>'Dashboard@test']);
+Route::get('/landing',['middleware'=>['web'],'uses'=>'DashboardController@index']);
+Route::get('/admin',['middleware'=>['web'],'uses'=>'AdminController@index']);
+Route::get('/admin/goal',['middleware'=>['web'],'uses'=>'AdminController@setGoal']);
+Route::get('/test',['middleware'=>['web'],'uses'=>'Dashboard@test']);
 Route::get('/',
     ['middleware' => ['saml:web'], function () {
 
