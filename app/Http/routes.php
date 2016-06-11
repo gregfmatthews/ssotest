@@ -12,7 +12,7 @@
 */
 
 Route::get('/',
-    ['middleware' => ['saml','web'], function () {
+    ['middleware' => ['saml'], function () {
 
     }]);
 
