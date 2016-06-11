@@ -12,7 +12,7 @@ class Saml2LoginEventListener
 
     public function handle(Saml2LoginEvent $event){
 
-        if(!Auth::check()) {
+
             $user = $event->getSaml2User();
             $attributes = $user->getAttributes();
             if (!isset($attributes['PersonImmutableID'][0])) {
@@ -22,7 +22,7 @@ class Saml2LoginEventListener
                 return redirect()->route('error');
             }
             Auth::loginUsingId($attributes['PersonImmutableID'][0], true);
-        }
+        
     }
 
 }
