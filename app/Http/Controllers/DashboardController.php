@@ -11,7 +11,7 @@ class DashboardController extends Controller
 {
     public function index(Request $request){
         $user = Auth::guard('web')->user();
-        
+        dd($user);
         if(!empty($user->attributes['marketcenters'])){
             dd($user->attributes['marketcenters']);
         } else {
