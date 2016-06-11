@@ -11,14 +11,18 @@ class Saml2LoginEventListener
     }
 
     public function handle(Saml2LoginEvent $event){
-        $user = $event->getSaml2User();
-        $attributes = $user->getAttributes();
-        if(!isset($attributes['PersonImmutableID'][0])){
-            logger()->error('kwuid not found', json_encode($attributes));
-            session()->flash('kwuid not found', json_encode($attributes));
-            return redirect()->route('error');
+
+        if(!Auth::check()) {
+            $user = $event->getSaml2User();
+            $attributes = $user->getAttributes();
+            if (!isset($attributes['PersonImmutableID'][0])) {
+                logger()->error('kwuid not found', json_encode($attributes));
+                session()->flash('kwuid not found', json_encode($attributes));
+
+                return redirect()->route('error');
+            }
+            Auth::loginUsingId($attributes['PersonImmutableID'][0], true);
         }
-        Auth::loginUsingId($attributes['PersonImmutableID'][0],true);
     }
 
 }

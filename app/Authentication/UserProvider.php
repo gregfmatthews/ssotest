@@ -17,7 +17,6 @@ class UserProvider implements IlluminateUserProvider
     public function retrieveById($identifier)
     {
 
-        if(!Auth::check()) {
 
             $id = $identifier == 334116 ? 42968 : $identifier;
             logger()->info('fetching');
@@ -31,9 +30,7 @@ class UserProvider implements IlluminateUserProvider
             $user->markercenters = $marketcenters;
 
             return $user;
-        } else {
-            return Auth::user();
-        }
+
     }
     public function updateRememberToken(Authenticatable $user, $token)
     {
