@@ -4,6 +4,7 @@
 namespace App\Authentication;
 use Illuminate\Contracts\Auth\UserProvider as IlluminateUserProvider;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Config;
 
 class UserProvider implements IlluminateUserProvider
 {
@@ -13,15 +14,15 @@ class UserProvider implements IlluminateUserProvider
     }
     public function retrieveById($identifier)
     {
-        /*$guzzle = new Client();
-        $response = $guzzle->post($this->settings['getMarketCenters'],['x-api-key'=>$this->settings['key']],json_encode(['kwuid'=>$identifier]));
+        $guzzle = new Client();
+        $response = $guzzle->post(Config('kwuapi.getmarketcenterurl'),['x-api-key'=>Config('kwuapi.key')],json_encode(['kwuid'=>$identifier]));
         $marketcenters = json_decode($response->getBody(1));
         print_r($response);
         print_r($marketcenters);
-        die();*/
+        die();
         $user = new User();
         $user->kwuid = 42968;
-       
+
         return $user;
     }
     public function updateRememberToken(Authenticatable $user, $token)
