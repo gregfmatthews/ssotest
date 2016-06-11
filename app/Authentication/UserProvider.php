@@ -23,7 +23,7 @@ class UserProvider implements IlluminateUserProvider
         $marketcenters = json_decode($response->getBody(1));
         $user = new User();
         $user->kwuid = $identifier;
-        //$user->markercenters = $marketcenters;
+        $user->markercenters = $marketcenters;
 
         return $user;
     }
