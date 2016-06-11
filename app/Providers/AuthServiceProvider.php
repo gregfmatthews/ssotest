@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -24,7 +25,17 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(GateContract $gate)
     {
-        $this->registerPolicies($gate);
+        //$this->registerPolicies($gate);
+        Auth::provider('kwuuser',function($app, array $config){
+           return new KwuUserProvider([
+               'getMarketCenters'=>config('kwupai.getmarketcenterurl'),
+               'key'=>config('kwupai.key')
+           ]);
+        });
+
+        $gate->define('view-admin', function($user=null){
+            return true;
+        });
 
         //
     }

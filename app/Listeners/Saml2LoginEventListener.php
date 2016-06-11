@@ -11,7 +11,12 @@ class Saml2LoginEventListener
 
     public function handle(Saml2LoginEvent $event){
         $user = $event->getSaml2User();
-        dd($user->getAttributes());
+        $attributes = $user->getAttributes();
+        if(!isset($attributes['PersonImmutableID'][0])){
+            logger()->error('kwuid not found', json_encode($attributes));
+            session()->flash('kwuid not found', json_encode($attributes));
+            return redirect()->route('error');
+        }
         die();
     }
 

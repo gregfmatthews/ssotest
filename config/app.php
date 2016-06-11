@@ -156,7 +156,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Aacotroneo\Saml2\Saml2ServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Kozz\Laravel\Providers\Guzzle::class,
 
     ],
 
@@ -205,6 +206,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Saml2'     => Aacotroneo\Saml2\Facades\Saml2Auth::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Guzzle' => Kozz\Laravel\Facades\Guzzle::class
 
     ],
 
