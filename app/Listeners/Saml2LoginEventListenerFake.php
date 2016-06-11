@@ -15,6 +15,7 @@ class Saml2LoginEventListenerFake
 
 
             Auth::loginUsingId(Config('kwuapi.testid'));
+            redirect(config('saml2_settings.loginRoute'));
         
     }
 
