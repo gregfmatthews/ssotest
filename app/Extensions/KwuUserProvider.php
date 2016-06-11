@@ -17,12 +17,11 @@ use Illuminate\Foundation\Auth\User;
 
 class KwuUserProvider implements UserProvider
 {
-    private $settings;
     private $user;
-    public function __construct($settings)
+    public function __construct(User $user)
     {
-        $this->settings = $settings;
-        print_r($settings);
+        $this->user = $user;
+        print_r($user);
         die();
     }
 
