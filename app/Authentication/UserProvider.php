@@ -24,7 +24,7 @@ class UserProvider implements IlluminateUserProvider
         $user = new User();
         $user->kwuid = $identifier;
         $user->markercenters = $marketcenters;
-
+        
         return $user;
     }
     public function updateRememberToken(Authenticatable $user, $token)
