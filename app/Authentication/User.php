@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'kwuid',
+        'kwuid','marketcenters'
     ];
 
     public function getAuthIdentifier()
