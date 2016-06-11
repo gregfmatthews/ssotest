@@ -17,7 +17,7 @@ class UserProvider implements IlluminateUserProvider
     {
 
         $id = $identifier==334116?42968:$identifier;
-
+        logger()->info('fetching');
         $response = Guzzle::post(Config('kwuapi.getmarketcenterurl'),[
             'headers'=>['x-api-key'=>Config('kwuapi.key')],
             'json'=>['kwuid'=>$id]
