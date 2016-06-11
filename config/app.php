@@ -158,7 +158,7 @@ return [
         Aacotroneo\Saml2\Saml2ServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Kozz\Laravel\Providers\Guzzle::class,
-        App\Authentication\UserProvider::class
+        App\Authentication\AuthServiceProvider::class
 
 
     ],
