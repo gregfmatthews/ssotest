@@ -16,6 +16,6 @@ Route::get('/',
 
 }]);
 Route::get('/error',function(){return view('errors.general');});
-Route::get('/landing',function(){return view('welcome');});
+Route::get('/landing',['DashboardController@index']);
 Route::get('/admin',['AdminController@index']);
 Route::get('/admin/goal',['AdminController@setGoal']);
