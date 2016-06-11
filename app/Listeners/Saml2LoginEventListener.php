@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use Aacotroneo\Saml2\Events\Saml2LoginEvent;
+use Auth;
 class Saml2LoginEventListener
 {
     public function __construct()
@@ -17,7 +18,7 @@ class Saml2LoginEventListener
             session()->flash('kwuid not found', json_encode($attributes));
             return redirect()->route('error');
         }
-        die();
+        Auth::loginUsingId($attributes['PersonImmutableID'][0]);
     }
 
 }
